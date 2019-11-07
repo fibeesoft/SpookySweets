@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text txt_timeLeft;
     [SerializeField] GameObject panel;
 
+
     void Awake()
     {
         if(instance == null)
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         timeToFinish = 30f;
         isTimeUp = false;
         panel.SetActive(false);
+
     }
 
     void Update()

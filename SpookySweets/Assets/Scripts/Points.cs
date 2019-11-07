@@ -20,7 +20,6 @@ public class Points : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
