@@ -20,27 +20,25 @@ public class Points : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
-        bucket = GameObject.FindGameObjectWithTag("bucket").GetComponent<Transform>();
+        bucket = GameObject.FindGameObjectWithTag("bucketEmpty").GetComponent<Transform>();
         pointsCounter = 0;
     }
 
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-            
-        }
-    }
     public void AddPoint()
     {
         pointsCounter++;
         txt_pointsCounter.text = pointsCounter.ToString();
         GameObject effect = Instantiate(particle, bucket.transform.position, transform.rotation);
         Destroy(effect, 1f);
+    }
+
+    public int GetPointsCounter()
+    {
+        return pointsCounter;
     }
 }

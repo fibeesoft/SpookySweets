@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     bool isTimeUp;
     bool isGameOver;
     [SerializeField] Text txt_timeLeft;
+    [SerializeField] GameObject panel;
 
     void Awake()
     {
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
         sweetsQuantity = 30;
         timeToFinish = 30f;
         isTimeUp = false;
+        panel.SetActive(false);
     }
 
     void Update()
@@ -40,14 +44,27 @@ public class GameManager : MonoBehaviour
         else
         {
             isTimeUp = true;
+            panel.GetComponent<FinishPanel>().DisplayPanel();
         }
     }
 
     public bool GetIsTimeUp()
     {
         return isTimeUp;
+        
     }
 
-    
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
+
 
 }

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6425387591860946268}
+  - component: {fileID: 3497648793845956212}
   - component: {fileID: 3971136211683545861}
   - component: {fileID: 3586991967530861745}
   m_Layer: 0
@@ -26,12 +27,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2252548573433867261}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.13, y: -3.73, z: -1.25}
+  m_LocalPosition: {x: 4.13, y: -3.73, z: -1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &3497648793845956212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2252548573433867261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9d1dd4ec97a8d4894e59cf5988e608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &3971136211683545861
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -40,14 +53,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2252548573433867261}
   serializedVersion: 6
-  lengthInSec: 0.83
+  lengthInSec: 1.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -115,7 +128,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.42
+      scalar: 1.04
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +181,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 13.62
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +297,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.61
+      scalar: 0.59
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -549,7 +562,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.016580628
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -971,7 +984,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1

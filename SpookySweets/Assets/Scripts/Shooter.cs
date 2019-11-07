@@ -6,9 +6,12 @@ public class Shooter : MonoBehaviour
 {
     Rigidbody2D rb;
     float speed;
+    Bucket bucketScript;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        bucketScript = FindObjectOfType<Bucket>().GetComponent<Bucket>();
         speed = 20f;
         Shoot();
     }
@@ -25,6 +28,7 @@ public class Shooter : MonoBehaviour
         {
             Destroy(gameObject, 0.0f);
             Points.instance.AddPoint();
+            bucketScript.ChangeColor();
         }
     }
 }
