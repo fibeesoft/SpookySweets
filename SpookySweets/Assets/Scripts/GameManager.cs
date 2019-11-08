@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayAgain()
     {
+        LevelManager.instance.LevelUp();
         SceneManager.LoadScene(0);
     }
 

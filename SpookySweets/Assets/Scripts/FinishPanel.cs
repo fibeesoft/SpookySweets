@@ -6,15 +6,13 @@ using UnityEngine.UI;
 public class FinishPanel : MonoBehaviour
 {
     [SerializeField] Text txt_pointsCounter;
+    [SerializeField] GameObject btn_nextLevel;
+    [SerializeField] GameObject txt_lastMessage;
+
+    int level;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        level = 1;
     }
 
     public void ShowHowManyPoints()
@@ -24,9 +22,16 @@ public class FinishPanel : MonoBehaviour
 
     public void DisplayPanel()
     {
+        txt_lastMessage.SetActive(false);
+        level = Savings.instance.GetLevel();
         txt_pointsCounter.text = "You got " + Points.instance.GetPointsCounter().ToString() + " sweets";
         gameObject.SetActive(true);
-        
+
+        if (level == 4)
+        {
+            btn_nextLevel.SetActive(false);
+            txt_lastMessage.SetActive(true);
+        }  
     }
 
     public void ClosePanel()
