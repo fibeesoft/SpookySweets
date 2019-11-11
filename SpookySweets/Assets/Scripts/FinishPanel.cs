@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FinishPanel : MonoBehaviour
 {
     [SerializeField] Text txt_pointsCounter;
+    [SerializeField] Text txt_highScore;
     [SerializeField] GameObject btn_nextLevel;
     [SerializeField] GameObject txt_lastMessage;
 
@@ -25,6 +26,8 @@ public class FinishPanel : MonoBehaviour
         txt_lastMessage.SetActive(false);
         level = Savings.instance.GetLevel();
         txt_pointsCounter.text = "You got " + Points.instance.GetPointsCounter().ToString() + " sweets";
+        GameManager.instance.FinishLevel();
+        txt_highScore.text = Savings.instance.GetHighScore().ToString();
         gameObject.SetActive(true);
 
         if (level == 4)

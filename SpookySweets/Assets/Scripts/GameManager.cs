@@ -26,6 +26,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void FinishLevel()
+    {
+       int level = Savings.instance.GetLevel();
+        int oldHighScore = Savings.instance.GetHighScore();
+        int score = Points.instance.GetPointsCounter();
+        if(score > oldHighScore)
+        {
+            Savings.instance.SetHighScore(score);
+        }
+    }
+
     void Start()
     {
         sweetsQuantity = 30;
