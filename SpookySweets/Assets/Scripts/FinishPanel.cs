@@ -9,12 +9,7 @@ public class FinishPanel : MonoBehaviour
     [SerializeField] Text txt_highScore;
     [SerializeField] GameObject btn_nextLevel;
     [SerializeField] GameObject txt_lastMessage;
-
-    int level;
-    void Start()
-    {
-        level = 1;
-    }
+    [SerializeField] GameObject bestScorePanel;
 
     public void ShowHowManyPoints()
     {
@@ -24,17 +19,27 @@ public class FinishPanel : MonoBehaviour
     public void DisplayPanel()
     {
         txt_lastMessage.SetActive(false);
-        level = Savings.instance.GetLevel();
+        int level = GameManager.instance.GetLevel();
         txt_pointsCounter.text = "You got " + Points.instance.GetPointsCounter().ToString() + " sweets";
-        GameManager.instance.FinishLevel();
-        txt_highScore.text = Savings.instance.GetHighScore().ToString();
+        txt_highScore.text = GameManager.instance.GetHighScore().ToString();
         gameObject.SetActive(true);
+        print($"level: {level} in DisplayPanel method");
 
         if (level == 4)
         {
             btn_nextLevel.SetActive(false);
             txt_lastMessage.SetActive(true);
         }  
+    }
+
+    public void DisplayBestScorePanel()
+    { 
+        bestScorePanel.SetActive(true);
+    }
+
+    public void CloseBestScorePanel()
+    {
+        bestScorePanel.SetActive(false);
     }
 
     public void ClosePanel()

@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Sprite[] bgSpriteArray;
     [SerializeField] GameObject[] levelChangeObjectsArray;
 
+
     void Awake()
     {
         if(instance == null)
@@ -23,7 +24,7 @@ public class LevelManager : MonoBehaviour
     int level;
     void Start()
     {
-        level = Savings.instance.GetLevel();
+        level = GameManager.instance.GetLevel();
         bgSprite.sprite = bgSpriteArray[level-1];
         LevelChooser();
     }
@@ -33,9 +34,8 @@ public class LevelManager : MonoBehaviour
         if(level < 4)
         {
             level++;
-            Savings.instance.SetLevel(level);
-            level = Savings.instance.GetLevel();
-            print(level);
+            GameManager.instance.SetLevel(level);
+            print("level up :" + level);
         }
         else
         {

@@ -11,7 +11,7 @@ public class BucketContainer : MonoBehaviour
     int level;
     void Start()
     {
-        level = Savings.instance.GetLevel();
+        level = GameManager.instance.GetLevel();
     }
 
 
