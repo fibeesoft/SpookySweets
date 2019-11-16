@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-       
 
         if (PlayerPrefs.HasKey("levelPlayerPrefs"))
         {
