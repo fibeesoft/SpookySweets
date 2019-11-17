@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     string highScorePlayerPrefName;
     bool isHighScoreChanged;
     bool isGameStopped;
+    [SerializeField] AudioSource audios;
 
     void Awake()
     {
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
         panel.SetActive(false);
         isHighScoreChanged = false;
         txt_highScore.text = "High Score: " + GetHighScore();
+        audios.Play();
     }
     public int GetHighScore()
     {

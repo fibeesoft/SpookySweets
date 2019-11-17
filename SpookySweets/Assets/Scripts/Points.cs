@@ -10,6 +10,7 @@ public class Points : MonoBehaviour
     [SerializeField] Text txt_pointsCounter;
     [SerializeField] GameObject particle;
     Transform bucket;
+    [SerializeField] AudioSource audios2;
     void Awake()
     {
         if(instance == null)
@@ -32,6 +33,7 @@ public class Points : MonoBehaviour
     {
         pointsCounter++;
         txt_pointsCounter.text = pointsCounter.ToString();
+        audios2.Play();
         GameObject effect = Instantiate(particle, bucket.transform.position, transform.rotation);
         Destroy(effect, 1f);
     }
